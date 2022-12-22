@@ -1,22 +1,38 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import styled from 'styled-components';
 
-const App = () => {
-  // 새롭게 생성되는 todo를 관리합니다.
-  const [todos, setTodos] = useState(null);
+export const TodoContainer = styled.div`
+  /* width: 100%; */
+`;
 
-  // Todos 데이터를 서버에서 가져옵니다.
-  const fetchTodos = async () => {
-    const { data } = await axios.get('http://localhost:3001/todos');
-    setTodos(data);
-  };
+export const TodoForm = styled.form``;
 
-  useEffect(() => {
-    fetchTodos();
-  }, []);
+export const ItemContainer = styled.div`
+  background-color: #ffeddb;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+`;
+export const InputBox = styled.input`
+  border: 2px solid #ff982d;
+  border-radius: 5px;
+  width: 400px;
+  margin-right: 15px;
+  font-size: 20px;
+`;
 
-  console.log(todos); // App.js:16
-  return <div>App</div>;
-};
-
-export default App;
+export const InputButton = styled.button`
+  border-radius: 5px;
+  border: 2px solid #ff982d;
+  background-color: transparent;
+  color: #ff982d;
+  font-size: 20px;
+  font-weight: 600;
+  width: 130px;
+  cursor: pointer;
+  &:hover {
+    background-color: #ff982d;
+    color: #fff;
+  }
+`;
