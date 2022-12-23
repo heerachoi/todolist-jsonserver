@@ -36,3 +36,19 @@ export const InputButton = styled.button`
     color: #fff;
   }
 `;
+
+export const TodoList = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const TodoItem = styled.div`
+  padding: 10px;
+`;
+
+export const DeleteButton = styled.button`
+  border: 1px solid #ff982d;
+  background-color: transparent;
+  margin-left: 10px;
+`;
